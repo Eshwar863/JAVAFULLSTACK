@@ -1,0 +1,69 @@
+Generics in Java allow you to create classes, interfaces, and methods that can work with different data types without specifying the exact type in advance. This makes the code more flexible, reusable, and type-safe by catching type errors at compile time instead of runtime.
+What are Generics?
+
+    Generics let you write a single class or method to handle multiple data types.
+
+    They are specified using type parameters inside angle brackets <T>.
+
+    You cannot use primitive types (like int, char) directly with generics; use their wrapper classes (Integer, Character) instead.
+
+Generic Class Example
+
+java
+class Box<T> {
+    private T value;
+    void set(T value) { this.value = value; }
+    T get() { return value; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box<String> stringBox = new Box<>();
+        stringBox.set("Hello");
+        System.out.println(stringBox.get()); // Output: Hello
+
+        Box<Integer> intBox = new Box<>();
+        intBox.set(50);
+        System.out.println(intBox.get()); // Output: 50
+    }
+}
+
+Generic Method Example
+
+java
+public class Util {
+    public static <T> void printArray(T[] array) {
+        for (T item : array) {
+            System.out.println(item);
+        }
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3};
+        String[] strArray = {"A", "B", "C"};
+
+        printArray(intArray);
+        printArray(strArray);
+    }
+}
+
+Advantages of Generics
+
+    Type safety: Errors are caught during compilation instead of at runtime.
+
+    Code reuse: Write one class/method that works for any data type.
+
+    Elimination of casts: No need for explicit casting when retrieving elements.
+
+    Improved readability: Clear indication of the types used.
+
+Summary
+Concept	Description
+Generic class	Class parameterized by a type
+Generic method	Method parameterized by a type
+Syntax	Use <T> before return types
+Benefit	Reusable, type-safe code
+
+In short, Java Generics help write flexible and type-safe code by allowing classes and methods to operate on any specified data type, improving reuse and reducing errors.
+Related
+How do generics improve Java code reusability and safety

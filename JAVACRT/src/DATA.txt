@@ -1,0 +1,46 @@
+interface ----> to achieve multiple inheritance to achieve 100% abstraction
+(whn we dont know the actual logic of methods void a(); void b();)
+
+
+abstract class ----> Hide implementation details (when some method you know and you dont know)
+
+Final ----> to stop inheritance but can access varibles by child
+
+Enum -----> Enum (Enumeration)
+
+An enum in Java is a special type used to define a fixed set of constants
+Enums improve code readability and safety because only the defined constants are allowed
+
+
+Record
+
+A record in Java is a compact class designed for storing immutable data (data that doesn’t change). It automatically creates methods like getters, toString(), hashCode(), and equals() for you, making code clean and boilerplate-free.
+
+Example:
+
+java
+public record Person(String name, int age) {}
+
+Person p = new Person("Lucky", 19);
+System.out.println(p.name()); // Output: Lucky
+System.out.println(p.age());  // Output: 19
+
+Records are excellent for simple data-carrying classes where you only need to hold data and not much else.
+
+Annotation is also an Interface   (@Interface FunctionInterface)
+
+Marker Interfaces
+A Marker Interface in Java is a special type of interface that has no methods or fields inside it
+
+    3 types of Marker Interfaces
+1.serializable
+2.clonable  (how to clone an Object in java)
+3.Remote
+
+Common Examples of Marker Interfaces in Java
+
+    Serializable: Marks a class as capable of being serialized (converted into a byte stream for storage or transfer).
+
+    Cloneable: Marks a class to indicate it supports cloning (copying an object).
+
+    Remote: Marks classes whose objects can be used remotely via RMI (Remote Method Invocation).

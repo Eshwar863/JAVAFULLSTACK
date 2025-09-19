@@ -1,0 +1,21 @@
+Lexicographical refers to an ordering system that arranges elements, such as words, strings, or even numbers, in a specific sequence, similar to how words are sorted in a dictionary. This process involves comparing elements position by position until a difference is found, at which point the element with the "smaller" character or value at that position comes first. For strings, if one string is a prefix of another, the shorter string is considered to come first. [1, 2, 3, 4, 5]
+How it works
+
+1. Compare the first characters: Start by comparing the first character of each element. [3]
+2. Move to the next position: If the first characters are the same, move on to compare the second characters. [2, 3]
+3. Continue until a difference is found: This comparison process continues until a position is found where the characters differ. [3, 5]
+4. Apply the ordering: The element with the character that comes earlier in the defined order (e.g., alphabetical, numerical) at the first point of difference is placed first. [3, 6]
+5. Handle prefixes: If one element is a prefix of another (e.g., "apple" vs. "apples"), the shorter element ("apple") is considered lexicographically smaller and comes first. [4, 5]
+
+Examples
+
+• Words: "short" &lt; "slice" &lt; "smell" because "h" &lt; "i" &lt; "m". [2, 7]
+• Numbers: In some computer systems, "100" might come before "9" because the first digit "1" comes before "9". However, for typical numerical sorting, this wouldn't be the case. [8]
+• Dates: Dates can be sorted lexicographically by month, then day, then year, or any other defined order. [1]
+
+Applications
+
+• Computer science: Used in sorting algorithms, data structures, and programming languages for string and array operations. [1, 3]
+• Linguistics: Fundamental to how dictionaries and glossaries are organized. [1]
+• Mathematics: A generalization of alphabetical order to sequences of any ordered elements.
+
