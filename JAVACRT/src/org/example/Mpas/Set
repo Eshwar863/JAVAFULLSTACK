@@ -1,0 +1,62 @@
+The Set interface in Java is part of the Java Collections Framework (JCF) and represents a collection that stores **unique elements**—it does not allow duplicate values.[1][3][6]
+
+### Key Features of Set Interface
+- **No Duplicates:** A Set cannot contain duplicate elements; any attempt to add a duplicate item will be ignored.
+- **No Guaranteed Order:** Elements in a Set are not stored in any particular order (except for special implementations).
+- **Efficient Membership Tests:** Checking if an element exists is generally faster than in lists.
+- **One Null Element:** Most Set implementations permit one null element.
+- **Extends Collection:** Inherits common collection methods like `add()`, `remove()`, `contains()`, `size()`, `clear()`, and `iterator()`.[3][6][1]
+
+### Common Implementations of Set
+
+| Class               | Characteristics                              | Order Type              | Allows Null        |
+|---------------------|----------------------------------------------|-------------------------|--------------------|
+| **HashSet**         | Backed by a hash table, fast insertion/retrieval | No predictable order      | Yes, one null key  |
+| **LinkedHashSet**   | HashSet + maintains insertion order          | Insertion order          | Yes, one null key  |
+| **TreeSet**         | Implements SortedSet, uses red-black tree     | Sorted (natural/Comparator) | No null keys       |
+| **EnumSet**         | Specialized for enum types                      | Ordered by enum declaration | No null           |
+
+
+
+### Basic Example Using HashSet
+
+```java
+import java.util.Set;
+import java.util.HashSet;
+
+public class SetExample {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("Apple");
+        set.add("Banana");
+        set.add("Apple");  // Duplicate, will not be added
+
+        System.out.println("Set contains: " + set);
+        System.out.println("Contains Banana? " + set.contains("Banana"));
+        System.out.println("Set size: " + set.size());
+    }
+}
+```
+
+Output might be:
+
+```
+Set contains: [Apple, Banana]
+Contains Banana? true
+Set size: 2
+```
+
+### Key Methods in Set Interface
+- `add(E e)`: Adds an element if not already present; returns false if element exists.
+- `remove(Object o)`: Removes the specified element.
+- `contains(Object o)`: Checks if element is present.
+- `size()`: Returns the number of elements.
+- `clear()`: Removes all elements.
+- `iterator()`: Returns an Iterator to iterate over the Set elements.
+
+### When to Use Set
+- When you need to store unique items without duplicates.
+- Efficient membership checking.
+- To implement mathematical set operations like union, intersection, and difference.
+- When order of elements is not a concern (or use LinkedHashSet/TreeSet for order).
+

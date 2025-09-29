@@ -1,0 +1,216 @@
+### Summary Table
+
+| Method         | Usage                                      | Description                                |
+|----------------|--------------------------------------------|--------------------------------------------|
+| `start()`      | `t.start();`                               | Start thread and call `run()`               |
+| `run()`        | Override and provide thread task           | Code executed by thread                     |
+| `sleep(ms)`    | `Thread.sleep(1000);`                       | Pause thread for ms                         |
+| `join()`       | `t.join();`                                | Wait for thread to finish                   |
+| `setName(name)`| `t.setName("name");`                        | Set thread name                             |
+| `getName()`    | `t.getName();`                             | Get thread name                             |
+| `interrupt()`  | `t.interrupt();`                           | Interrupt thread (wake from sleep/wait)    |
+| `isAlive()`    | `t.isAlive();`                             | Check if thread is still running            |
+| `currentThread()`| `Thread.currentThread();`                  | Returns currently running thread           |
+| `yield()`      | `Thread.yield();`                          | Suggests thread pause for others           |
+
+
+Here is a simple explanation of commonly used Java Thread class methods along with example snippets that show their operation:
+
+***
+
+### 1. `start()`
+- Starts the thread and causes the JVM to call the `run()` method in a new thread.
+- Example:
+```java
+Thread t = new Thread(() -> System.out.println("Thread running"));
+t.start();
+```
+
+***
+
+### 2. `run()`
+- Contains the code executed by the thread.
+- Usually overridden; don't call directly for new thread creation.
+- Example:
+```java
+public void run() {
+    System.out.println("Inside run method");
+}
+```
+
+***
+
+### 3. `sleep(long ms)`
+- Pauses current thread for given milliseconds.
+- Throws `InterruptedException`.
+- Example:
+```java
+try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+```
+
+***
+
+### 4. `join()`
+- Current thread waits for the thread on which `join()` is called to finish.
+- Throws `InterruptedException`.
+- Example:
+```java
+t.join();
+```
+
+***
+
+### 5. `setName(String name)` / `getName()`
+- Sets or gets name of the thread useful for debugging.
+- Example:
+```java
+t.setName("MyThread");
+System.out.println(t.getName());
+```
+
+***
+
+### 6. `interrupt()`
+- Interrupts a thread, often used to stop sleeping or waiting threads.
+- Example:
+```java
+t.interrupt();
+```
+
+***
+
+### 7. `isAlive()`
+- Returns `true` if the thread is still running.
+- Example:
+```java
+System.out.println(t.isAlive());
+```
+
+***
+
+### 8. `currentThread()`
+- Static method returning currently executing thread.
+- Example:
+```java
+System.out.println(Thread.currentThread().getName());
+```
+
+***
+
+### 9. `yield()`
+- Suggests scheduler pause current thread and allow other equal or higher priority threads to run.
+- Example:
+```java
+Thread.yield();
+```
+
+***
+
+### Summary Table
+
+| Method         | Usage                                      | Description                                |
+|----------------|--------------------------------------------|--------------------------------------------|
+| `start()`      | `t.start();`                               | Start thread and call `run()`               |
+| `run()`        | Override and provide thread task           | Code executed by thread                     |
+| `sleep(ms)`    | `Thread.sleep(1000);`                       | Pause thread for ms                         |
+| `join()`       | `t.join();`                                | Wait for thread to finish                   |
+| `setName(name)`| `t.setName("name");`                        | Set thread name                             |
+| `getName()`    | `t.getName();`                             | Get thread name                             |
+| `interrupt()`  | `t.interrupt();`                           | Interrupt thread (wake from sleep/wait)    |
+| `isAlive()`    | `t.isAlive();`                             | Check if thread is still running            |
+| `currentThread()`| `Thread.currentThread();`                  | Returns currently running thread           |
+| `yield()`      | `Thread.yield();`                          | Suggests thread pause for others           |
+
+***
+
+Using these methods, you can control thread execution, pause threads, manage thread lifecycles, and facilitate thread cooperation in Java programs.Here is a simple explanation of commonly used Java Thread class methods along with example snippets that show their operation:
+
+***
+
+### 1. `start()`
+- Starts the thread and causes the JVM to call the `run()` method in a new thread.
+- Example:
+```java
+Thread t = new Thread(() -> System.out.println("Thread running"));
+t.start();
+```
+
+***
+
+### 2. `run()`
+- Contains the code executed by the thread.
+- Usually overridden; don't call directly for new thread creation.
+- Example:
+```java
+public void run() {
+    System.out.println("Inside run method");
+}
+```
+
+***
+
+### 3. `sleep(long ms)`
+- Pauses current thread for given milliseconds.
+- Throws `InterruptedException`.
+- Example:
+```java
+try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+```
+
+***
+
+### 4. `join()`
+- Current thread waits for the thread on which `join()` is called to finish.
+- Throws `InterruptedException`.
+- Example:
+```java
+t.join();
+```
+
+***
+
+### 5. `setName(String name)` / `getName()`
+- Sets or gets name of the thread useful for debugging.
+- Example:
+```java
+t.setName("MyThread");
+System.out.println(t.getName());
+```
+
+***
+
+### 6. `interrupt()`
+- Interrupts a thread, often used to stop sleeping or waiting threads.
+- Example:
+```java
+t.interrupt();
+```
+
+***
+
+### 7. `isAlive()`
+- Returns `true` if the thread is still running.
+- Example:
+```java
+System.out.println(t.isAlive());
+```
+
+***
+
+### 8. `currentThread()`
+- Static method returning currently executing thread.
+- Example:
+```java
+System.out.println(Thread.currentThread().getName());
+```
+
+***
+
+### 9. `yield()`
+- Suggests scheduler pause current thread and allow other equal or higher priority threads to run.
+- Example:
+```java
+Thread.yield();
+```
+
+***

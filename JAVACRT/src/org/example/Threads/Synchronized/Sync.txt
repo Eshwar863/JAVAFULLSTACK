@@ -1,0 +1,40 @@
+Synchronization:
+---------------------------
+
+It is a mechanism that allows to access a shared resource only one thread at a time.
+
+                                                                           (or)
+Synchronization in Java is the capability to control the access of multiple threads to access any shared resource to make it thread-safe.
+
+There are two ways to synchronize the code:
+
+1) synchronizing a method
+2) synchronizing block of code
+
+
+
+1) synchronizing a method:
+
+Syntax:
+synchronized ReturnType MethodName(arg1, arg2, ......)
+{
+        ================
+        ================
+        ================
+}
+
+2) synchronizing a block of code:
+
+Syntax:
+ReturnType MethodName(arg1, arg2, ......)
+{
+        ================
+        ================
+        synchronized(Object)
+        {
+                ================
+                ================
+        }
+        ================
+        ================
+}

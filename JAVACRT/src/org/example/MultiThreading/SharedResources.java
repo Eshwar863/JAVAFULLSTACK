@@ -16,5 +16,8 @@ public class SharedResources {
 
     public static void main(String[] args) {
         /// here outside of Synchronized as many threads can be executed
+        SharedResources sharedResources = new SharedResources();
+        sharedResources.waitExample();
+        sharedResources.notifyAll();
     }
 }

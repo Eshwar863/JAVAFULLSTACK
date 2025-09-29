@@ -1,0 +1,48 @@
+The `Runnable` interface in Java has only one method:
+
+### 1. `run()`
+- This method contains the code that defines the task the thread will execute.
+- When a class implements `Runnable`, it must override the `run()` method.
+- The `run()` method does not take any parameters and does not return any value.
+- It is invoked internally when the thread begins execution, usually via the `start()` method of the `Thread` class.
+
+***
+
+### Operations of the `run()` Method
+
+- When you pass a `Runnable` implementation object to a `Thread` and call `start()`, the thread executes the `run()` method in a separate call stack.
+- Calling `run()` directly, however, executes it synchronously on the current thread, without creating a new thread.
+
+***
+
+### Example of `Runnable` and `run()` in Action
+
+```java
+class MyTask implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Thread running: " + Thread.currentThread().getName());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyTask task = new MyTask();              // Create Runnable instance
+        Thread t = new Thread(task);              // Create Thread with Runnable
+        t.start();                               // Starts new thread, calls run() internally
+
+        System.out.println("Main thread: " + Thread.currentThread().getName());
+    }
+}
+```
+
+***
+
+### Output:
+
+```
+Main thread: main
+Thread running: Thread-0
+```
+
+***

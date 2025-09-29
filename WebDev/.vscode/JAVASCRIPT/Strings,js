@@ -1,0 +1,10 @@
+
+
+let name = "ATHUL";
+console.log(name.length); // Output: 5
+// let text  = 'name  ${name}!' 
+console.log(name.toUpperCase()); // Output: ATHUL
+console.log(name.toLowerCase()); // Output: athul 
+console.log(name.charAt(0));    // Output: A
+
+

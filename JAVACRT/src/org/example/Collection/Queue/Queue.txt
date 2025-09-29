@@ -1,0 +1,63 @@
+Queues in Java are a type of data structure that follows the
+First-In-First-Out (FIFO) principle: elements are added at the rear and removed from the front.
+The Java Collections Framework provides several interfaces and classes to work with queues in various forms and use-cases.
+
+***
+
+### Queue Interface
+- The main interface for queues in Java is `Queue<E>`, which extends `Collection<E>`.
+- The Java Collections Framework also defines `Deque<E>` (Double Ended Queue) for queues where you can insert or remove items from both ends.
+
+***
+
+### Common Queue Classes in Java
+
+| Class Name             | Description |
+|------------------------|-------------|
+| `LinkedList`           | Implements both List and Queue interfaces. Commonly used as a queue (FIFO order) or deque (double-ended queue). Allows for null elements. |
+| `PriorityQueue`        | An implementation of a priority heap-based queue where elements are ordered either naturally or via a Comparator. Does not allow null elements. Operations focus on priority rather than strict insertion order. |
+| `ArrayDeque`           | Resizable-array implementation of the Deque interface. More efficient than `Stack` or `LinkedList` for stack and queue operations; does not allow null elements. |
+| `ConcurrentLinkedQueue`| A thread-safe, non-blocking queue suitable for high-concurrency scenarios. |
+| `BlockingQueue` (Interface) | Used for thread-safe queues that support operations that wait for the queue to become non-empty or non-full. Implementations include `ArrayBlockingQueue`, `LinkedBlockingQueue`, `PriorityBlockingQueue`, etc. |
+| `ArrayBlockingQueue`   | A bounded, array-backed blocking queue. |
+| `LinkedBlockingQueue`  | A optionally-bounded, linked node queue supporting blocking operations. |
+| `PriorityBlockingQueue`| An unbounded blocking priority queue. |
+| `DelayQueue`           | A time-based scheduling queue where elements can be processed after a certain delay. |
+| `SynchronousQueue`     | Each insert operation must wait for a corresponding remove operation, and vice versa. |
+
+***
+
+### Simple Example
+
+`````````````````````""java""```````````````````````````
+import java.util.*;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+
+        System.out.println(queue.remove()); // 10
+        System.out.println(queue.peek());   // 20
+        System.out.println(queue);          // [20, 30]
+    }
+}
+````````````````````````````````````````````````````````````
+
+***
+
+### Types of Queues in Java
+
+- **Simple Queue**: Basic FIFO queue (via `LinkedList` or `ArrayDeque`).
+- **Priority Queue**: Orders elements by priority instead of insertion order (`PriorityQueue`).
+- **Double Ended Queue (Deque)**: Supports insertion/removal at both ends (`ArrayDeque`, `LinkedList` as Deque).
+- **Blocking Queue**: Used for thread-safe producer-consumer scenarios (`ArrayBlockingQueue`, `LinkedBlockingQueue`).
+- **Concurrent Queue**: High-performance concurrent queues (`ConcurrentLinkedQueue`, `PriorityBlockingQueue`).
+
+***
+
+Java's queue classes cover everything from simple FIFO operations to high-concurrency,
+thread-safe queues and priority-based scheduling,
+making them suitable for a wide range of scenarios in program design and multithreaded applications.

@@ -1,0 +1,8 @@
+
+Single Page  -- the actions will happen in only one HTML file (less) can be developed through react oe vue.
+
+Multi Page -- the action will take place by redirecting to another pages (Huge DATA) .
+
+here in this we will not touch the index.html file main.js and App.js
+
+here the node_modules are the components where these are not use full 
